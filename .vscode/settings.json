@@ -1,0 +1,15 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html",
+    "mdx": "html"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    "className=\"([^\"]*)\"",
+    "className={`([^`]*)`}",
+    "tw`([^`]*)`",
+    "tw=\"([^\"]*)\""
+  ]
+}
