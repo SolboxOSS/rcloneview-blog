@@ -41,7 +41,6 @@ export default function Layout({ children, ...props }) {
           crossOrigin="anonymous"
         ></script>
 
-        {/* Custom CSS */}
         <link rel="stylesheet" href={customCss} />
       </Head>
 

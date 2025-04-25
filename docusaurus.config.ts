@@ -10,25 +10,18 @@ const config: Config = {
     "RcloneView is a web-based file manager for Rclone. It provides a user-friendly interface to manage files across various cloud storage services and local storage.",
   favicon: "img/favicon.ico",
 
-  stylesheets: [
-    "/assets/css/styles.css", // static/assets/css/styles.css 기준
-  ],
-
   // Set the production url of your site here
   url: "https://rlconeview.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/support/",
 
-  onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
-
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "facebook", // Usually your GitHub org/user name.
   projectName: "docusaurus", // Usually your repo name.
 
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
@@ -43,7 +36,6 @@ const config: Config = {
     [
       "classic",
       {
-        /* docs preset을 tutorials 와 guides를 플러그인 방식으로 적용하기 위해 제거함.
         docs: {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
@@ -51,7 +43,7 @@ const config: Config = {
           editUrl:
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
-        */
+
         blog: false, // Blog 설정을 사용하지 않으므로 삭제
         /* 사용하지 않아 삭제        
         blog: {
@@ -135,13 +127,14 @@ const config: Config = {
       ],
     },
 */
+    /*
     algolia: {
       appId: "2BCJWBRUUE",
       apiKey: "5852e3ef5183ededf4f07a27df662081",
       indexName: "RcloneView", // Algolia에 등록된 인덱스 이름
       //   searchPagePath: "search", // 선택: 별도 검색 페이지 경로
     },
-
+*/
     /* footer 삭제함.
     footer: {
       style: 'dark',
@@ -189,11 +182,12 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
   */
-
+    /*
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+    */
   } satisfies Preset.ThemeConfig,
 };
 
