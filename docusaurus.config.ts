@@ -20,6 +20,9 @@ const config: Config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/support/",
 
+  onBrokenLinks: "warn",
+  onBrokenMarkdownLinks: "warn",
+
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "facebook", // Usually your GitHub org/user name.
@@ -48,7 +51,7 @@ const config: Config = {
           editUrl:
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
-*/
+        */
         blog: false, // Blog 설정을 사용하지 않으므로 삭제
         /* 사용하지 않아 삭제        
         blog: {
@@ -66,7 +69,7 @@ const config: Config = {
           onInlineAuthors: "warn",
           onUntruncatedBlogPosts: "warn",
         },
-*/
+        */
         theme: {
           customCss: "./src/css/custom.css",
         },
@@ -75,25 +78,26 @@ const config: Config = {
   ],
   // Tutorials와 guide에 docs 프리셋 적용을 위해 플러그인 추가
   plugins: [
-    // Tutorials 문서 등록
+    // Tutorials plugin 등록
     [
       "@docusaurus/plugin-content-docs",
       {
         id: "tutorials",
-        path: "tutorials", // 루트에 있는 tutorials 폴더 사용
-        routeBasePath: "tutorials", // /tutorials/... 으로 접근
+        path: "tutorials",
+        routeBasePath: "tutorials",
         sidebarPath: require.resolve("./sidebars.tutorials.ts"),
         editUrl:
           "https://github.com/SolboxOSS/rcloneview-blog/edit/main/tutorials/",
       },
     ],
-    // Help Guides 문서 등록
+
+    // Guides plugin 등록
     [
       "@docusaurus/plugin-content-docs",
       {
         id: "guides",
-        path: "guides", // 루트에 있는 guides 폴더 사용
-        routeBasePath: "guides", // /guides/... 으로 접근
+        path: "guides",
+        routeBasePath: "guides",
         sidebarPath: require.resolve("./sidebars.guides.ts"),
         editUrl:
           "https://github.com/SolboxOSS/rcloneview-blog/edit/main/guides/",

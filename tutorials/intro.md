@@ -9,6 +9,6 @@ sidebar_label: "Tutorials" # 사이드바에 표시될 항목 이름
 
 RcloneView 튜토리얼에 오신 것을 환영합니다. 아래 목록에서 단계별 가이드를 선택하세요.
 
-- **[How to set up remote storages](./remote-setup.md)**
+- **[How to set up remote storages](./remote-setup)**
 
   ... (이런 식으로 해당 섹션의 문서 링크 나열 또는 소개) ...
