@@ -5,8 +5,9 @@ import type * as Preset from "@docusaurus/preset-classic";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
+  title: "RcloneView Support Center",
+  tagline:
+    "RcloneView is a web-based file manager for Rclone. It provides a user-friendly interface to manage files across various cloud storage services and local storage.",
   favicon: "img/favicon.ico",
 
   stylesheets: [
@@ -39,6 +40,7 @@ const config: Config = {
     [
       "classic",
       {
+        /* docs preset을 tutorials 와 guides를 플러그인 방식으로 적용하기 위해 제거함.
         docs: {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
@@ -46,6 +48,9 @@ const config: Config = {
           editUrl:
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
+*/
+        blog: false, // Blog 설정을 사용하지 않으므로 삭제
+        /* 사용하지 않아 삭제        
         blog: {
           showReadingTime: true,
           feedOptions: {
@@ -61,15 +66,44 @@ const config: Config = {
           onInlineAuthors: "warn",
           onUntruncatedBlogPosts: "warn",
         },
+*/
         theme: {
           customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
   ],
+  // Tutorials와 guide에 docs 프리셋 적용을 위해 플러그인 추가
+  plugins: [
+    // Tutorials 문서 등록
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "tutorials",
+        path: "tutorials", // 루트에 있는 tutorials 폴더 사용
+        routeBasePath: "tutorials", // /tutorials/... 으로 접근
+        sidebarPath: require.resolve("./sidebars.tutorials.ts"),
+        editUrl:
+          "https://github.com/SolboxOSS/rcloneview-blog/edit/main/tutorials/",
+      },
+    ],
+    // Help Guides 문서 등록
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "guides",
+        path: "guides", // 루트에 있는 guides 폴더 사용
+        routeBasePath: "guides", // /guides/... 으로 접근
+        sidebarPath: require.resolve("./sidebars.guides.ts"),
+        editUrl:
+          "https://github.com/SolboxOSS/rcloneview-blog/edit/main/guides/",
+      },
+    ],
+  ],
 
   themeConfig: {
     // Replace with your project's social card
+    /* src/theme/Layout/index.tsx 로 대체하므로 삭제함.
     image: "img/docusaurus-social-card.jpg",
     navbar: {
       title: "RcloneView",
@@ -78,13 +112,6 @@ const config: Config = {
         src: "img/logo.svg",
       },
       //
-      /* Navi Bar 추가 - jay
-      items: [
-        { label: "Plus", to: "/plus", position: "left" }, // 예: Plus 페이지 링크
-        { label: "Download", to: "/download", position: "left" }, // 예: Download 페이지 링크
-        { label: "Support", to: "/support", position: "left" }, // Support Center 페이지 링크 추가
-      ],
-      */
 
       items: [
         {
@@ -94,16 +121,16 @@ const config: Config = {
           label: "Tutorial",
         },
         { to: "/blog", label: "Blog", position: "left" },
-        /*
+
         {
           href: "https://github.com/facebook/docusaurus",
           label: "GitHub",
           position: "right",
         },
-        */
+
       ],
     },
-
+*/
     algolia: {
       appId: "2BCJWBRUUE",
       apiKey: "5852e3ef5183ededf4f07a27df662081",
@@ -111,7 +138,7 @@ const config: Config = {
       //   searchPagePath: "search", // 선택: 별도 검색 페이지 경로
     },
 
-    /*
+    /* footer 삭제함.
     footer: {
       style: 'dark',
       links: [
@@ -158,6 +185,7 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
   */
+
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,

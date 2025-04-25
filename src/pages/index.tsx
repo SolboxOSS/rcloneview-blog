@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "@theme/Layout";
 import SearchBar from "@theme/SearchBar";
+import Link from "@docusaurus/Link";
 
 export default function SupportCenter() {
   return (
@@ -21,13 +22,14 @@ export default function SupportCenter() {
         </div>
 */}
       </header>
+
       {/* ...이하 본문 영역... */}
       <main className="max-w-5xl mx-auto px-4 py-12">
         {/* 3개 카드 그리드 배치 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
           {/* Tutorials 카드 */}
-          <a
-            href="/docs/tutorials"
+          <Link
+            href="/tutorials/intro"
             className="block border rounded-lg p-6 shadow hover:bg-gray-50 hover:shadow-md transition"
           >
             <div className="text-5xl mb-4">📖</div>{" "}
@@ -36,17 +38,17 @@ export default function SupportCenter() {
             <p className="text-gray-700">
               Step-by-step guides to master RcloneView.
             </p>
-          </a>
+          </Link>
           {/* Help Guides 카드 */}
-          <a
-            href="/docs/help-guide"
+          <Link
+            href="/guides/intro"
             className="block border rounded-lg p-6 shadow hover:bg-gray-50 hover:shadow-md transition"
           >
             <div className="text-5xl mb-4">❓</div>{" "}
             {/* 아이콘 (물음표 이모지) */}
             <h2 className="text-2xl font-semibold mb-2">Help Guides</h2>
             <p className="text-gray-700">Learn how to use RcloneView.</p>
-          </a>
+          </Link>
           {/* Community 카드 (외부 링크) */}
           <a
             href="https://forum.rcloneview.com"
